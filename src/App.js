@@ -133,34 +133,35 @@ function App() {
   return (
     <div className="App">
       <div className="sadrzaj">
-      <h1>25 + 5 Clock</h1>
-      <div id="break-label">
-        Break Length
-        <div id="break-dugmad">
-        <div id="break-decrement" onClick={smanjiBreak}>{<FaArrowDown/>}</div>
-        <div id="break-length">{breakL}</div>
-        <div id="break-increment" onClick={povecajBreak}>{<FaArrowUp/>}</div>
+        <div id="time" >
+          <div id="timer-wrap" style={{color: color}}>
+            <div id="timer-label">{naziv}</div>
+            <div id="time-left"> {minutes}:{seconds}</div> 
+            <audio id="beep" src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav" ></audio>
+            <div id="inline">
+              <div id="start_stop" onClick={start}><FaPlay/><FaPause/></div>
+              <div id="reset" onClick={reset}><HiRefresh/></div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div id="session-label">
-        Session Length
-        <div id="session-dugmad">
-        <div id="session-decrement" onClick={smanjiSession}>{<FaArrowDown/>}</div>
-        <div id="session-length">{session}</div>
-        <div id="session-increment" onClick={povecajSession}>{<FaArrowUp/>}</div>
+        <div className='postavka'>
+          <div id="break-label">
+            Set break
+            <div id="break-dugmad">
+              <div id="break-decrement" onClick={smanjiBreak}>{<FaArrowDown/>}</div>
+              <div id="break-length">{breakL}</div>
+              <div id="break-increment" onClick={povecajBreak}>{<FaArrowUp/>}</div>
+            </div>
+          </div>
+          <div id="session-label">
+            Set time
+            <div id="session-dugmad">
+              <div id="session-decrement" onClick={smanjiSession}>{<FaArrowDown/>}</div>
+              <div id="session-length">{session}</div>
+              <div id="session-increment" onClick={povecajSession}>{<FaArrowUp/>}</div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div id="time">
-        <div id="timer-wrap" style={{color: color}}>
-        <p id="timer-label">{naziv}</p>
-        <p id="time-left"> {minutes}:{seconds}</p> 
-        <audio id="beep" src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav" ></audio>
-        </div>
-        <div id="inline">
-      <div id="start_stop" onClick={start}><FaPlay/><FaPause/></div>
-      <div id="reset" onClick={reset}><HiRefresh/></div>
-      </div>
-      </div>
       </div>
     </div>
   );
