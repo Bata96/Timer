@@ -29,15 +29,15 @@ function App() {
 
   const povecajBreak = () => {
     if(breakL < 60) {
-      setBreakL( breakL + 1);
+      setBreakL( Number(breakL) + 1);
     }}
 
   const povecajSession = () => {
     if(session < 60 && session >= 9) {
-      setSession( session + 1);
+      setSession( Number(session) + 1);
       setMinutes(Number(minutes) + 1);  
     } else if(session < 9 && session >= 1) {
-      setSession(session + 1)
+      setSession(Number(session) + 1)
       setMinutes("0" + (Number(minutes) + 1));
     }
   }
@@ -113,7 +113,7 @@ function App() {
    }
 
   function odbrojavanje() {
-    akcija.current = setInterval(timer, 1000);
+    akcija.current = setInterval(timer, 100);
   }
 
   function zaustavi() {
